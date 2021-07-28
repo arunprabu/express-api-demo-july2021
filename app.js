@@ -1,5 +1,6 @@
 const express = require('express'); // importing express js module 
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
 
@@ -8,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(bodyParser.json());
+
+app.use(cors());
 
 // handling /api over GET method
 app.get('/api', (req, res) => {
